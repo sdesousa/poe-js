@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Index</title>
+    </head>
+
+    <body>
+        <script>
+            // Fonctions
+            function msg(name = "tout le monde") {
+                document.write("Bonjour " + name);
+            }
+            msg("Mohammed");
+            document.write("<br />");
+            msg();
+            document.write("<br />");
+
+            // Sensibilité à la casse
+            var firstname = "Nicolas";
+            document.write(firstname);
+            // ERROR is not defined
+            //document.write(Firstname);
+            //document.WRITE(firstname);
+            //OCUMENT.write(firstname);
+
+            // Portée
+            document.write("<br />");
+            var name = "Bahri";
+            function myFunctionName() {
+                document.write(name);
+            }
+            myFunctionName();
+
+            function myFunctionNameNationalite() {
+                var nationality = "Algérienne";
+            }
+            // ERROR is not defined
+            // document.write("<br />");
+            // document.write(nationality);
+
+            document.write("<br />");
+            function myFunctionNameAge() {
+                // doit être déclaré implicitement
+                age = 31;
+            }
+            myFunctionNameAge();
+            document.write(age);
+
+            // Tableaux
+            document.write("<br /><p style='font-weight: bolder'>Les tableaux:</p>");
+            var cars = ["saab", "Volvo", "BMW"];
+            document.write(cars[0] + "<br />");
+            document.write(cars[1] + "<br />");
+            document.write(cars[2] + "<br />");
+
+            var lang = ["js", "java", "python", "php"];
+            lang.push("c++");
+            document.write(lang.toString() + "<br />");
+            document.write(lang.join("/") + "<br />");
+            lang.pop(); // remove last
+            lang.shift(); // remove first
+            document.write(lang.toString() + "<br />");
+            lang.splice(2, 2); // splice(start, delete count)
+            document.write(lang.toString() + "<br />");
+            document.write(lang.length + "<br />");
+
+            // Objets
+            document.write("<br /><p style='font-weight: bolder'>Les objets:</p>");
+            var person = {
+                firstname: "Jôel",
+                lastname: "Dupret",
+                age: 30,
+                display: function() {
+                    return this.firstname + " " + this.lastname;
+                }
+            };
+            document.write(person.firstname + "<br />");
+            document.write(person["firstname"] + "<br />");
+            document.write(person.display() + "<br />");
+
+            var obj = {};
+            obj.fname = "Mohammed";
+            obj.lname = "Bahri";
+            console.log(obj.lname);
+
+            var tab = [];
+            tab[0] = "Mohammed";
+            tab[1] = "Bahri";
+            console.log(tab[0]);
+
+            document.write("<br /><p style='font-weight: bolder'>Les conditions:</p>");
+            var h=8;
+            if (h <13) {
+                document.write("Bonjour");
+            } else if (h < 18) {
+                document.write("Bonne après midi");
+            } else {
+                document.write("Bonne soirée");
+            }
+            var role = "admin";
+            if (role == "admin" || role == "super-admin") {
+                document.write("accès authorisé");
+            } else {
+                document.write("accès refusé");
+            }
+            var a = 300;
+            var b = 100;
+            var c = 200;
+            if (a > b && a > c) {
+                document.write("La variable 'a' contient la plus grande valeur");
+            }
+            var age = 16;
+            age >18 ? console.log("OK"): console.log("NO");
+            lang = "CN";
+            switch (lang) {
+                case "AR":
+                    document.write("");
+                    break;
+                case "FR":
+                    document.write("Bonjour !");
+                    break;
+                case "CN":
+                    document.write("早上好 !");
+                    break;
+                default:
+                    document.write("Hello !");
+            }
+
+            document.write("<br /><p style='font-weight: bolder'>Les boucles:</p>");
+            for (var i = 0; i < 5; i++) {
+                document.write(i);
+            }
+            document.write("<br />");
+            var j = 0;
+            while (j < 5) {
+                document.write(j);
+                j++;
+            }
+            document.write("<br />");
+
+            person = ["Bahri", "Mohammed", 30];
+            for (var x = 0; x < person.length; x++) {
+                document.write(person[x] + " ");
+            }
+            document.write("<br />");
+            for (var y in person) {
+                document.write(person[y] + " ")
+            }
+            document.write("<br />");
+
+            function sumFunc(x, y) {
+                return x+y;
+            }
+
+            avg = sumFunc(12, 14) / 2;
+            document.writeln(avg);
+
+            name = prompt("Entrez votre nom: ");
+            alert("Bonjour " + name);
+
+        </script>
+    </body>
+
+</html>

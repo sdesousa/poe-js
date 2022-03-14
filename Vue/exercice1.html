@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Vue Exercice</title>
+        <script src="https://unpkg.com/vue@next"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <p> Hello {{ info.name }}, you are {{ info.age }} years old and you are {{ info.occupation }}.</p>
+            <p>{{ getInformationPerson("Bahri", 32, "Webtrainer") }}</p>
+            <p>{{ capitalizeString("i AM a STRING") }}</p>
+
+            <table>
+                <tr>
+                    <th>SNI</th>
+                    <th>NAME</th>
+                    <th>SPECIALITY</th>
+                    <th>AVG</th>
+                    <th>MENTION</th>
+                </tr>
+                <tr v-for="student in students">
+                    <td>{{ student.sni }}</td>
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.speciality }}</td>
+                    <td>{{ student.avg }}</td>
+                    <td>{{ student.mention }}</td>
+
+                </tr>
+            </table>
+
+
+
+        </div>
+    </body>
+
+    <script>
+        const app = Vue.createApp({
+            data () {
+                let info = {
+                    name: "Bahri",
+                    age: 32,
+                    occupation: "web trainer"
+                };
+                let students = [{
+                    sni: 'S123',
+                    name: 'ALLON',
+                    speciality: 'TIN',
+                    avg: 15,
+                    mention: 'Good'
+                },
+                {
+                    sni: 'S321',
+                    name: 'DAVID',
+                    speciality: 'IPS',
+                    avg: 16,
+                    mention: 'Good'
+                },
+                {
+                    sni: 'S231',
+                    name: 'ALAIN',
+                    speciality: 'IPS',
+                    avg: 17,
+                    mention: 'Very Good'
+                },
+                ];
+                return {
+                    info,
+                    students
+                };
+            },
+            methods: {
+                getInformationPerson: function (name, age, occupation) {
+                    return `Hello ${name}, you are ${age} years old and you are ${occupation}.`;
+                },
+                capitalizeString(str) {
+                    return str[0].toUpperCase() + str.slice(1).toLowerCase();
+                }
+            }
+        }).mount('#app');
+    </script>
+</html>

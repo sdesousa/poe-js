@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iut>
+  <etudiant>
+    <id>1230</id>
+    <nom>ALLON</nom>
+    <uv>
+      <nom>Techniques Informatiques et Numériques</nom>
+      <duree>20</duree>
+      <note>13</note>
+    </uv>
+    <uv>
+      <nom>Conception et Développement Informatique</nom>
+      <duree>10</duree>
+      <note>14</note>
+    </uv>
+    <uv>
+      <nom>Informatique Pour les Sciences</nom>
+      <duree>10</duree>
+      <note>15</note>
+    </uv>
+  </etudiant>
+  <etudiant>
+      <id>1231</id>
+      <nom>BACARD</nom>
+      <uv>
+        <nom>Conception et Développement Informatique</nom>
+        <duree>10</duree>
+        <note>12</note>
+      </uv>
+    </etudiant>
+  <etudiant>
+    <id>1232</id>
+    <nom>BAKER</nom>
+    <uv>
+      <nom>Conception et Développement Informatique</nom>
+      <duree>10</duree>
+      <note>14</note>
+    </uv>
+    <uv>
+      <nom>Informatique Pour les Sciences</nom>
+      <duree>10</duree>
+      <note>14</note>
+    </uv>
+  </etudiant>
+  <etudiant>
+    <id>1234</id>
+    <nom>BELAIR</nom>
+    <uv>
+      <nom>Techniques Informatiques et Numériques</nom>
+      <duree>20</duree>
+      <note>14</note>
+    </uv>
+    <uv>
+      <nom>Conception et Développement Informatique</nom>
+      <duree>10</duree>
+      <note>16</note>
+    </uv>
+    <uv>
+      <nom>Informatique Pour les Sciences</nom>
+      <duree>10</duree>
+      <note>12</note>
+    </uv>
+    <uv>
+      <nom>Bioinformatique</nom>
+      <duree>25</duree>
+      <note>12</note>
+    </uv>
+    <uv>
+      <nom>Informatique de gestion</nom>
+      <duree>30</duree>
+      <note>13</note>
+    </uv>
+  </etudiant>
+</iut>

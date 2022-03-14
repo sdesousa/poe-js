@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercice 15</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h3>Exercice global</h3>
+
+        <form id="frm1">
+            <label>INE :
+                <input type="text" name="ine" value="" required>
+            </label>
+            <input type="button" onclick="getMeans()" value="Envoyer">
+        </form>
+        <p id="message"></p>
+
+        <script>
+
+            const students = [
+                {
+                    "ine": 1230,
+                    "nom": "ALLON",
+                    "prenom": "LEVY",
+                    "specialite": "Techniques Informatiques et Numériques",
+                    "moyenne": 13,
+                    "mention": "Bien"
+                },
+                {
+                    "ine": 1231,
+                    "nom": "BACARD",
+                    "prenom": "HUGO",
+                    "specialite": "Conception & Développement Informatique",
+                    "moyenne": 12,
+                    "mention": "A Bien"
+                },
+                {
+                    "ine": 1232,
+                    "nom": "BAKER",
+                    "prenom": "MATTHEW",
+                    "specialite": "Informatique Pour les Sciences",
+                    "moyenne": 14,
+                    "mention": "Bien"
+                },
+                {
+                    "ine": 1233,
+                    "nom": "BALWE",
+                    "prenom": "CHETAN",
+                    "specialite": "Bioinformatiques",
+                    "moyenne": 18,
+                    "mention": "Excellent"
+                },
+                {
+                    "ine": 1234,
+                    "nom": "BELAIR",
+                    "prenom": "LUC",
+                    "specialite": "Informatiques de gestion",
+                    "moyenne": 13,
+                    "mention": "A Bien"
+                }
+            ];
+
+            function getMeans() {
+                let form = document.getElementById("frm1");
+                let ine = form.elements["ine"].value;
+                // let student = students.find( x => x.ine == ine);
+                let student = students.find( x => x.ine === parseInt(ine));
+
+                let msg = (student) ? `${student.prenom} ${student.nom} a eu ${student.moyenne}` : "L'étudiant n'existe pas";
+                document.getElementById("message").innerHTML = msg;
+
+            }
+
+        </script>
+    </body>
+</html>

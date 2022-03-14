@@ -1,0 +1,39 @@
+#square {
+    width: 600px;
+    height: 300px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.formSquare {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+    width: 600px;
+    padding: 10px;
+}
+
+.formSquare > input {
+    width: 150px;
+    height: 80%;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.green {
+    background-color: green;
+}
+
+#flagImg {
+    width: 640px;
+    height: 424px;
+    border-radius: 20px;
+    border: 1px solid black;
+}

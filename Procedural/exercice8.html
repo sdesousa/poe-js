@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercice 8</title>
+    </head>
+    <body>
+
+    <p>Cliquez sur le bouton pour calculer la surface de votre cercle:</p>
+    <button onclick="circleSurface()">Lancer la fonction</button>
+
+    <p>Switch et l'objet date:</p>
+    <button onclick="today()">Lancer la fonction</button>
+
+    <p>Table de multiplication:</p>
+    <button onclick="multiply()">Lancer la fonction</button>
+
+    <script>
+
+        function circleSurface() {
+            rayon = prompt("Entrez le rayon du cercle: ");
+            let surface = Math.PI*rayon**2;
+            alert(`La surface est ${surface}`);
+        }
+
+        function today() {
+            const today = new Date();
+
+            const days = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+            alert(`Nous sommes ${days[today.getDay()]}`);
+
+            // let day;
+            // switch (today.getDay()) {
+            //     case 0:
+            //         day = "Dimanche";
+            //         break;
+            //     case 1:
+            //         day = "Lundi";
+            //         break;
+            //     case 2:
+            //         day = "Mardi";
+            //         break;
+            //     case 3:
+            //         day = "Mercredi";
+            //         break;
+            //     case 4:
+            //         day = "Jeudi";
+            //         break;
+            //     case 5:
+            //         day = "Vendredi";
+            //         break;
+            //     case 6:
+            //         day = "Samedi";
+            //         break;
+            // }
+            // alert(`Nous sommes ${day}`);
+        }
+
+        function multiply() {
+            let number = prompt("Entrez un nombre: ");
+            let mulTable = [];
+            for (var i = 1; i <= 10; i++) {
+                mulTable.push(i*number);
+            }
+
+            // mulTable = Array.from(new Array(10), (x, i) => (i+1)*number);
+            console.log(mulTable);
+        }
+
+    </script>
+    </body>
+</html>

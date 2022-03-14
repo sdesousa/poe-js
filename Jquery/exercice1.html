@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <meta charset="utf-8"/>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <title>exercice 1</title>
+    </head>
+    <style>
+        .blue {
+            color: blue;
+        }
+        #div1 {
+            height:100px;
+            width:300px;
+            background-color:yellow;
+        }
+        #pgreenback {
+            background-color: green;
+        }
+        #div2, #div3, #div6 {
+            border: 1px solid black;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            box-shadow: 0 0 5px 5px darkgrey;
+        }
+        #div2 p, label, div {
+            margin: 5px;
+            padding: 5px;
+        }
+        #div4 {
+            width: 400px;
+            height: 200px;
+            margin: 3px;
+            padding: 10px;
+            background-color: lightgreen;
+        }
+        #div4 p {
+            margin: 0;
+            padding: 5px;
+        }
+        #div5 {
+            width: 100%;
+            height: 100px;
+        }
+        #citylist {
+            list-style: none;
+        }
+        .listyle {
+            background-color: orange;
+            color: black;
+            padding: 5px;
+            margin: 5px;
+            border-radius: 10px;
+            width: 200px;
+            text-align: center;
+        }
+        .listyle.liselected {
+            background-color: green;
+            color: white;
+        }
+        #elementlist {
+            list-style: lower-alpha;
+        }
+
+    </style>
+    <body>
+        <p id="sizechange">Mon texte qui s'agrandit</p>
+        <br />
+        <h1 class="blue">Titre 1</h1>
+        <h2 class="blue">Titre 2</h2>
+        <p class="blue">Ceci est un paragraphe.</p>
+        <p>Ceci est un autre paragraphe.</p>
+        <button id="removeclass">Supprimer la classe des éléments</button>
+
+        <div id="div1">
+            Ceci est du texte dans la div.
+            <p>Ceci est un paragraphe dans la div.</p>
+            <p>Ceci est un autre paragraphe dans la div.</p>
+        </div>
+        <button id="removedivcontent">Effacer</button>
+        <button id="readddivcontent">Remettre</button>
+
+        <p id="pgreenback">Ceci est un paragraphe sur fond vert</p>
+        <button id="pcolor">Retourner le background-color du paragraphe</button>
+
+        <br />
+        <h3>Exercice 5</h3>
+        <div id="div2">
+            <p id="ptexthello">Ceci est un paragraphe.</p>
+            <p id="phtmlhello">Ceci est un autre paragraphe.</p>
+            <label>Input:
+                <input id="inputhello" type="text" value="Ceci est une valeur">
+            </label>
+            <div>
+                <button id="divText">Set Texte</button>
+                <button id="divHtml">Set HTML</button>
+                <button id="divInput">Set Value</button>
+            </div>
+        </div>
+
+        <br />
+        <h3>Exercice 6</h3>
+        <div id="div3">
+            <a id="link" href="https://www.google.com">www.google.com</a>
+            <button id="buttonlink">Changer le href et le texte</button>
+        </div>
+
+        <br />
+        <h3>Exercice 7</h3>
+        <div id="div4">
+        </div>
+        <button id="buttondiv">Afficher</button>
+
+        <br />
+        <h3>Exercice 8</h3>
+        <button class="buttoncolor" value="green">Vert</button>
+        <button class="buttoncolor" value="blue">Bleu</button>
+        <button class="buttoncolor" value="red">Rouge</button>
+        <button class="buttoncolor" value="orange">Orange</button>
+        <div id="div5"></div>
+
+        <br />
+        <h3>Exercice 9</h3>
+        <ul id="citylist">
+            <li class="listyle">Paris</li>
+            <li class="listyle">Lille</li>
+            <li class="listyle">Montpellier</li>
+        </ul>
+
+        <br />
+        <h3>Exercice 9</h3>
+        <div id="div6">
+            <button id="buttonadd">Ajouter un élément</button>
+            <ol id="elementlist">
+            </ol>
+        </div>
+
+    </body>
+    <script>
+        $(document).ready(function(){
+            const textSelector= $("#sizechange");
+            const divSelector = $("#div1");
+            const defaultSize = parseInt(textSelector.css("font-size"));
+            const textDiv = divSelector.html();
+            const helloText = "Bonjour tout le monde!";
+            let counterElement = 0;
+
+            $(textSelector).click(function(){
+                let textSize = parseInt($(this).css("font-size"));
+                textSize *= (textSize === defaultSize) ? 3/2 : 2/3;
+                $(this).css({"font-size": `${textSize}px`});
+            });
+            $("#removeclass").click(function(){
+                $(".blue").removeClass("blue");
+            });
+            $("#removedivcontent").click(function(){
+                divSelector.empty();
+            });
+            $("#readddivcontent").click(function(){
+                divSelector.html(textDiv);
+            });
+            $("#pcolor").click(function(){
+                alert("Background color = " + $("#pgreenback").css("background-color"));
+            });
+            $("#divText").click(function () {
+                $("#ptexthello").text(helloText);
+            });
+            $("#divHtml").click(function () {
+                $("#phtmlhello").html(`<b>${helloText}</b>`);
+            });
+            $("#divInput").click(function () {
+                $("#inputhello").val(helloText);
+            });
+            $("#buttonlink").click(function () {
+                let linkSelector = $("#link");
+                linkSelector.attr("href", "https://www.youtube.com");
+                linkSelector.text("https://www.youtube.com");
+            });
+            $("#buttondiv").click(function () {
+                let divSelector = $("#div4");
+                divSelector.append(`<p>Width de la div: ${$(divSelector).css("width")}</p>`);
+                divSelector.append(`<p>height de la div: ${$(divSelector).css("height")}</p>`);
+                divSelector.append(`<p>Margin de la div: ${$(divSelector).css("margin")}</p>`);
+                divSelector.append(`<p>Padding de la div: ${$(divSelector).css("padding")}</p>`);
+            });
+            $(".buttoncolor").click(function () {
+                $("#div5").css({"background-color":`${$(this).val()}`});
+            });
+
+            $(".listyle").click(function () {
+                $("#citylist").children().removeClass("liselected");
+                $(this).addClass("liselected");
+            });
+            $("#buttonadd").click(function () {
+                counterElement++;
+                $("#elementlist").append(`<li>Elément ${counterElement}</li>`)
+            });
+
+        });
+    </script>
+</html>

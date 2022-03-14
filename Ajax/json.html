@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <meta charset="utf-8"/>
+    <body>
+        <h1>Liste des régions</h1>
+        <script>
+            // Créer un objet XMLHttpRequest
+            let xmlhttp = new XMLHttpRequest();
+            // Définir le callback
+            xmlhttp.onload = function() {
+                let data = JSON.parse(this.responseText);
+                let ul = document.createElement("ul");
+                ul.style.listStyleType = "none";
+                let ulId = "ulId";
+                ul.setAttribute("id", ulId);
+                document.body.append(ul)
+                for (let i in data) {
+                    let content = `${data[i].code}. ${data[i].nom}`;
+                    let li = document.createElement("li");
+                    li.innerHTML = content;
+                    document.getElementById(ulId).appendChild(li);
+                }
+            }
+            // Envoyer la requête
+            xmlhttp.open("GET", "https://geo.api.gouv.fr/regions");
+            xmlhttp.send();
+        </script>
+    </body>
+</html>

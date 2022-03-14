@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercice 11</title>
+    </head>
+    <body>
+        <h3>Exercice 11</h3>
+        <form id="frm1">
+            <label>Name :
+                <input type="text" name="name" value="" required>
+            </label>
+            <br />
+            <label>Age :
+                <input type="text" name="age" value="" required>
+            </label>
+            <br />
+            <label>Email :
+                <input type="email" name="email" value="" required>
+            </label>
+            <br />
+            <input type="button" onclick="getFormValues()" value="Afficher">
+        </form>
+
+        <h3>Exercice 12</h3>
+        <form id="frm2">
+            <label>
+                <input type="number" name="nb1" value="" required>
+            </label>
+            <label>
+                <select name="operation">
+                    <option value="Plus">Plus</option>
+                    <option value="Moins">Moins</option>
+                    <option value="Fois">Fois</option>
+                    <option value="Divise">Divisé par</option>
+                    <option value="Modulo">Modulo</option>
+                </select>
+            </label>
+            <label>
+                <input type="number" name="nb2" value="" required>
+            </label>
+            <input type="button" onclick="getOperationResult()" value="Valider">
+        </form>
+
+        <h3>Exercice 13</h3>
+        <form id="frm3">
+            <table>
+                <tr>
+                    <td>
+                        <img src="img1.png" alt="">
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" name="question1" value="renne">Renne
+                        </label>
+                        <br />
+                        <label>
+                            <input type="radio" name="question1" value="poisson">Poisson
+                        </label>
+                        <br />
+                        <label>
+                            <input type="radio" name="question1" value="lievre">Lievre
+                        </label>
+                        <br />
+                        <label>
+                            <input type="radio" name="question1" value="cheval">Cheval
+                        </label>
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img2.png" alt="">
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" name="question2" value="renne">Renne
+                        </label>
+                        <br />
+                        <label>
+                            <input type="radio" name="question2" value="poisson">Poisson
+                        </label>
+                        <br />
+                        <label>
+                            <input type="radio" name="question2" value="lievre">Lievre
+                        </label>
+                        <br />
+                        <label>
+                            <input type="radio" name="question2" value="cheval">Cheval
+                        </label>
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img3.png" alt="">
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" name="question3" value="renne">Renne
+                        </label>
+                        <br />
+                        <label>
+                            <input type="radio" name="question3" value="poisson">Poisson
+                        </label>
+                        <br />
+                        <label>
+                            <input type="radio" name="question3" value="lievre">Lievre
+                        </label>
+                        <br />
+                        <label>
+                            <input type="radio" name="question3" value="cheval">Cheval
+                        </label>
+                        <br />
+                    </td>
+                </tr>
+                <tr >
+                    <td colspan="3" >
+                        <input type="button" onclick="animalQuiz()" value="Envoyer">
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <h3>Exercice 14</h3>
+        <form id="frm4">
+            <label>Entrez une somme :
+                <input type="number" name="value" value="" required>
+            </label>
+            <br />
+            <label>
+                <input type="radio" name="conversion" value="euroToDollar">Conversion: € -> $
+            </label>
+            <br />
+            <label>
+                <input type="radio" name="conversion" value="dollarToEuro">Conversion: $ -> €
+            </label>
+            <br />
+            <input type="button" onclick="getConversionResult()" value="Convertir">
+
+        </form>
+
+
+
+        <script>
+            function getFormValues() {
+                let form = document.getElementById("frm1");
+                let name = form.elements["name"].value;
+                let age = form.elements["age"].value;
+                let email = form.elements["email"].value;
+                let msg;
+                if (name === "" || age === "" || email === "") {
+                    msg = "Veuillez remplir tous les champs!";
+                } else {
+                    msg = `Bonjour ${name}, vous avez ${age} ans`;
+                }
+                alert(msg)
+            }
+
+            function getOperationResult() {
+                let form = document.getElementById("frm2");
+                let nb1 = form.elements["nb1"].value;
+                let nb2 = form.elements["nb2"].value;
+                let operation = form.elements["operation"].value;
+                let msg;
+                let result;
+                if (nb1 === "" || nb2 === "" || operation === "") {
+                    msg = "Veuillez remplir tous les champs!";
+                } else {
+                    nb1 = parseInt(nb1);
+                    nb2 = parseInt(nb2);
+                    switch (operation) {
+                        case "Plus":
+                            result = nb1 + nb2;
+                            break;
+                        case "Moins":
+                            result = nb1 - nb2;
+                            break;
+                        case "Fois":
+                            result = nb1 * nb2;
+                            break;
+                        case "Divise":
+                            result = Math.floor(nb1 / nb2);
+                            break;
+                        case "Modulo":
+                            result = nb1 % nb2;
+                            break;
+                    }
+                    msg = `${nb1} ${operation} ${nb2} = ${result}`;
+                }
+                alert(msg);
+            }
+
+            function animalQuiz() {
+                let form = document.getElementById("frm3");
+                let solutions = ["renne", "poisson", "lievre"];
+                let answers = [
+                    form.elements["question1"].value,
+                    form.elements["question2"].value,
+                    form.elements["question3"].value
+                ];
+                let goodAnswer = 0;
+                let msg;
+
+                if (answers.includes("")) {
+                    msg = "Veuillez remplir tous les champs!";
+                } else {
+                    for (var i = 0; i < answers.length; i++) {
+                        if (answers[i] === solutions[i]) goodAnswer++;
+                    }
+                    msg = `Vous avez ${goodAnswer} bonne(s) réponse(s)!`;
+                }
+                alert(msg);
+            }
+
+            function getConversionResult() {
+                let form = document.getElementById("frm4");
+                let conversionType = form.elements["conversion"].value;
+                let value = form.elements["value"].value;
+                let msg;
+                let valueConverted;
+
+                if(value === "" || conversionType === "") {
+                    msg = "Veuillez remplir tous les champs!";
+                } else if(conversionType === "euroToDollar"){
+                    valueConverted = 1.13*value;
+                    msg = `${value} euro(s) = ${valueConverted} dollar(s)`;
+                } else {
+                    valueConverted = 0.88*value;
+                    msg = `${value} dollar(s) = ${valueConverted} euro(s)`;
+                }
+                alert(msg);
+            }
+        </script>
+    </body>
+</html>

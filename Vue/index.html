@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Vue Index</title>
+        <script src="https://unpkg.com/vue@next"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <p>Message: {{ message }}</p>
+            <button v-on:click="reverseMessage">Reverse message</button>
+            <ul>
+                <li>{{ cars[0] }}</li>
+                <li>{{ cars[1] }}</li>
+                <li>{{ cars[2] }}</li>
+            </ul>
+            <ul>
+                <li>{{ carsO.v1 }}</li>
+                <li>{{ carsO.v2 }}</li>
+                <li>{{ carsO.v3 }}</li>
+            </ul>
+        </div>
+
+        <p v-bind:title="bindMessage">
+            Hover your mouse over me for a few seconds to see my dynamically bound title!
+        </p>
+    </body>
+
+    <script>
+        const app = Vue.createApp({
+            data () {
+                return {
+                    message: "Hello world!",
+                    cars: ['BMW', 'RENAULT', 'PEUGEOT'],
+                    carsO: {v1: 'BMW', v2: 'RENAULT', v3: 'PEUGEOT'},
+                    bindMessage: 'You loaded this page on ' + new Date().toLocaleString()
+                };
+            },
+            methods: {
+                reverseMessage: function () {
+                    this.message = this.message.split(' ').reverse().join(' ');
+                }
+            }
+        }).mount('#app');
+    </script>
+</html>

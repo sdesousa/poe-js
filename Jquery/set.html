@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <meta charset="utf-8"/>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <title>index Jquery</title>
+        <script>
+            $(document).ready(function(){
+                $("#btn1").click(function(){
+                    $("#test1").text("Hello!");
+                });
+                $("#btn2").click(function(){
+                    $("#test2").html("<b>Hello!</b>");
+                });
+                $("#btn3").click(function(){
+                    $("#test3").val("Mohammed BAHRI");
+                });
+                $("#buttonhref").click(function(){
+                    $("#bhr").attr("href", "http://bahri-mohammed.fr/jquery/");
+                });
+                $("#btn4").click(function(){
+                    $("#padd").append("<b>Appended text new</b>.");
+                });
+                $("#btn5").click(function(){
+                    $("ol").append("<li>List item new</li>");
+                });
+                $("#btn6").click(function(){
+                    $("#padd").prepend("<b>Prepended text</b>.");
+                });
+                $("#btn7").click(function(){
+                    $("ol").prepend("<li>Prepended item</li>");
+                });
+                $("#btn8").click(function(){
+                    $("#padd").before("<h1>Before</h1>");
+                });
+                $("#btn9").click(function(){
+                    $("#padd").after("<i>After</i><br>");
+                });
+
+                // append et prepend -> dans la balise
+                // before et after -> avant/apres la balise
+
+                $("#buttonremove").click(function(){
+                    $("#div1").remove();
+                });
+                $("#buttonempty").click(function(){
+                    $("#div2").empty();
+                });
+
+                // remove supprime balise
+                // empty vide le contenu de la balise
+
+                $("#addclass").click(function(){
+                    $("h1, h2").addClass("blue");
+                });
+                $("#removeclass").click(function(){
+                    $("h1, h2").removeClass("blue");
+                });
+                $("#toggleclass").click(function(){
+                    $("h1, h2").toggleClass("blue");
+                });
+                $("#buttoncss").click(function(){
+                    alert("The font size = " + $("#pcss").css("font-size"));
+                });
+                $("#buttonback").click(function(){
+                    $("#pback").css({"background-color":"yellow", "color":"white"});
+                });
+
+            });
+        </script>
+    </head>
+    <body>
+        <p id="test1">Paragraph 1</p>
+        <p id="test2">Paragraph 2</p>
+        <input type="text" id="test3" value="Default value">
+        <button id="btn1">Set Text</button>
+        <button id="btn2">Set HTML</button>
+        <button id="btn3">Set Value</button>
+        <p><a href="http://bahri-mohammed.fr/" id="bhr">Mohammed.fr</a></p>
+        <button id="buttonhref">Change the href value</button>
+
+        <p id="padd">This is a paragraph.</p>
+        <ol>
+            <li>List item</li>
+        </ol>
+        <button id="btn4">Append text</button>
+        <button id="btn5">Append list items</button>
+        <button id="btn6">Prepend text</button>
+        <button id="btn7">Prepend list item</button>
+        <button id="btn8">Insert before</button>
+        <button id="btn9">Insert after</button>
+        <div id="div1" style="background-color:yellow;">
+            <p>This is a paragraph in the div.</p>
+            <p>This is another paragraph in the div.</p>
+        </div>
+        <br>
+        <button id="buttonremove">Remove div element</button>
+        <div id="div2" style="height:100px;width:300px;background-color:yellow;">
+            <p>This is a paragraph in the div.</p>
+            <p>This is another paragraph in the div.</p>
+        </div>
+        <br>
+        <button id="buttonempty">Empty the div element</button>
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <button id="addclass">Add class blue</button>
+        <button id="removeclass">Remove class blue</button>
+        <button id="toggleclass">Toggle class</button>
+
+        <p id="pcss" style="font-size:20px;">This is a paragraph.</p>
+        <button id="buttoncss">Return font-size of p</button>
+        <p id="pback" style="background-color:green;">This is a paragraph.</p>
+        <button id="buttonback">Set background-color of p</button>
+    </body>
+</html>

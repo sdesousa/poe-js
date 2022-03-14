@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercice 1</title>
+    </head>
+    <body>
+    <script>
+        function coneVolume(rayon, hauteur) {
+            return (rayon**2*hauteur*Math.PI)/3;
+        }
+
+        function starLine(number) {
+            for (var i = 0; i < number; i++) {
+                document.write("*");
+            }
+        }
+
+        let rayon = 5;
+        let hauteur = 8;
+        let volume = coneVolume(rayon, hauteur);
+        document.write(`Le volume du cône est: (${rayon}²*${hauteur}*PI)/3 = ${volume}`);
+        document.write("<br />");
+
+        let personne = [];
+        personne["prenom"] = "Luka";
+        personne["age"] = 27;
+        personne["situation"] = "marié";
+        document.write(`Je m'appelle ${personne["prenom"]}, j'ai ${personne["age"]} ans et je suis ${personne["situation"]}`);
+        document.write("<br />");
+
+        starLine(5);
+        document.write("<br />");
+        for (var i = 0; i < 4; i++) {
+            starLine(10);
+            document.write("<br />");
+        }
+    </script>
+    </body>
+</html>

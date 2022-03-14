@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Vue Exercice</title>
+        <script src="https://unpkg.com/vue@next"></script>
+    </head>
+    <style>
+        .form {
+            width: 400px;
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid lightgrey;
+            box-shadow: 0 0 5px 5px lightgrey;
+            display: flex;
+            flex-direction: column;
+        }
+        .form > label {
+            margin: 5px;
+            padding: 5px;
+        }
+        .form > input {
+            padding: 5px;
+            width: 80px;
+        }
+    </style>
+
+    <body>
+        <div id="app">
+            <div class="form">
+                <div v-if="errors.length">
+                    <h4 >Please correct the following error(s):</h4>
+                    <ul>
+                        <li v-for="error in errors">{{ error }} required.</li>
+                    </ul>
+                </div>
+
+                <label>Name:
+                    <input type="text" v-model="name">
+                </label>
+                <label>Age:
+                    <input type="text" v-model="age">
+                </label>
+                <input type="submit" value="submit" v-on:click="checkForm">
+                <p v-if="message">{{ message }}</p>
+            </div>
+
+            <div class="form">
+                <h2>Currency converter</h2>
+                <label>enter a sum:
+                    <input type="number" v-model="sum" min="0">
+                </label>
+                <label>
+                    <input type="radio" v-model="converter" value="eTd">
+                    Convert to Dollar ($)
+                </label>
+                <label>
+                    <input type="radio" v-model="converter" value="dTe">
+                    Convert to Euro ($)
+                </label>
+                <input type="submit" value="submit" v-on:click="convert">
+                <p v-if="msgConverter">{{ msgConverter }} </p>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        const app = Vue.createApp({
+            data () {
+                return {
+                    name: null,
+                    age: null,
+                    message:null,
+                    errors: [],
+                    sum: null,
+                    converter: null,
+                    msgConverter: null,
+                };
+            },
+            methods: {
+                checkForm: function () {
+                    this.reinit();
+                    this.errors = [];
+                    this.message = null;
+                    if (!this.name) {
+                        this.errors.push("Name");
+                    }
+                    if (!this.age) {
+                        this.errors.push("Age");
+                    }
+                    if (this.errors.length === 0) {
+                        this.message = `Hello ${this.name}`
+                    }
+
+                },
+                reinit: function () {
+                    this.errors = [];
+                    this.message = null;
+                },
+                convert: function () {
+                    if (!this.converter || !this.sum) {
+                        this.msgConverter = "Please complete all fields!"
+                    } else if (this.converter === "eTd") {
+                        this.msgConverter = `${this.sum} euro(s) = ${this.sum*1.1} dollar(s)`;
+                    } else if (this.converter ==="dTe") {
+                        this.msgConverter = `${this.sum} dollar(s) = ${this.sum*0.8} euro(s)`;
+                    }
+                }
+            }
+        }).mount('#app');
+    </script>
+</html>

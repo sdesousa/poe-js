@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Vue Exercice</title>
+        <script src="https://unpkg.com/vue@next"></script>
+    </head>
+    <style>
+        ol {
+            list-style: lower-alpha;
+        }
+        img {
+            width: 20px;
+            height: 20px;
+        }
+        .square {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+
+    <body>
+        <div id="app">
+            <p>Email informations:</p>
+            <div v-for="(mail, index) in emails">
+                Email {{ index+1 }}
+                <ul>
+                    <li v-for="(name, status) in mail">{{ status }} - {{ name }}</li>
+                </ul>
+            </div>
+            <span v-for="i in 10">♠</span>
+<!--            <span v-for="i in 10">&spades;</span>-->
+            <ol >
+                <li v-for="i in 5"><img v-for="j in 10" src="vue.webp" alt=""></li>
+            </ol>
+
+            <div v-for="person in persons">
+                <p v-if="person.age >= 18 && person.occupation === 'developer'">Hello {{person.name}}! You are welcome! </p>
+                <p v-else>Sorry {{person.name}}! You are not authorized. </p>
+            </div>
+
+            <button v-on:click="randomLettre">Start random</button>
+            <p>The lettre is: {{ lettre }}</p>
+
+            <div class="square" :style=bckcolor v-on:mouseover="changeColor" v-on:mouseout="reinitColor"></div>
+
+        </div>
+    </body>
+
+    <script>
+        const app = Vue.createApp({
+            data () {
+                const lettres = Array.from(Array(11)).map((e, i) => (i + 65)).map((x) => String.fromCharCode(x));
+                const initColor = "background-color: red"
+                let emails = [{
+                    sender: 'Nicolas Elbaz',
+                    recipient: 'Christel Lavaut',
+                },
+                {
+                    sender: 'Jerome Claustre',
+                    recipient: 'Mohammed Bahri',
+                },
+                ];
+                let persons = [
+                    {
+                        name: 'Sarah',
+                        age: 22,
+                        occupation: 'developer'
+                    },
+                    {
+                        name: 'Paul',
+                        age: 17,
+                        occupation: 'student'
+                    },
+
+                ];
+                return {
+                    emails,
+                    persons,
+                    lettres,
+                    lettre: '',
+                    initColor,
+                    bckcolor: initColor
+                };
+            },
+            methods: {
+                randomLettre: function () {
+                    this.lettre =  this.lettres[Math.floor(Math.random()*this.lettres.length)];
+                },
+                changeColor: function () {
+                    this.bckcolor = "background-color: green";
+                },
+                reinitColor: function () {
+                    this.bckcolor = this.initColor;
+                }
+            }
+        }).mount('#app');
+    </script>
+</html>

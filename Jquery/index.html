@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <meta charset="utf-8"/>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <title>index Jquery</title>
+        <!--script dans head-->
+        <script>
+            $(document).ready(function(){
+                $("#test").click(function(){
+                    $(this).hide(); // cache bouton
+                    $("p").hide(); // cache tous p
+                    $(".my_class").hide(); // cache class
+                    $("#my_id").hide(); // cache id
+                });
+                $("#pbackcol").on({
+                    mouseenter: function () { $(this).css("background-color", "lightgray");},
+                    mouseleave: function () { $(this).css("background-color", "lightblue");},
+                    click: function () { $(this).css("background-color", "yellow");},
+                });
+                $("#hide").click(function () {
+                    $("#hideshow").hide();
+                });
+                $("#show").click(function () {
+                    $("#hideshow").show();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <p>Paragraph 1</p>
+        <div class="my_class">Paragraph 2</div>
+        <div id="my_id">Paragraph 3</div>
+        <button id="test">Test</button>
+
+        <p id="pbackcol">Paragraph background-color</p>
+        <p id="hideshow">If you click the "Hide" button, I will disappear.</p>
+        <button id="hide">Hide</button>
+        <button id="show">Show</button>
+    </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <meta charset="utf-8"/>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <title>Todo</title>
+    </head>
+    <style>
+        .todo {
+            width: 80%;
+            margin-top: 20px;
+            margin-left: 10%;
+            padding: 20px;
+            border: 1px solid lightgrey;
+            box-shadow: 0 0 5px 5px lightgrey;
+        }
+        .title {
+            text-align: center;
+            margin-top: 0;
+        }
+        .addform {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 20px;
+        }
+        #inputtask {
+            width: 70%;
+        }
+        #addtask {
+            width: 30%;
+            border-radius: 0 10px 10px 0;
+            color: white;
+            background-color: mediumseagreen;
+        }
+        #tabletask {
+            border-collapse: collapse;
+            width: 100%;
+
+        }
+        #tabletask td, #tabletask th {
+            border: 1px solid lightgrey;
+            margin: 0;
+            text-align: center;
+        }
+        .deletebutton {
+            background-color: hotpink;
+            color: white;
+            border-color: hotpink;
+            border-radius: 5px;
+        }
+    </style>
+    <body>
+
+    <div class="todo">
+        <h1 class="title">Liste des tâches</h1>
+        <div class="addform">
+            <label for="inputtask"></label>
+            <input id="inputtask" type="text" value="" placeholder="Autres">
+            <button id="addtask">Ajouter</button>
+        </div>
+        <table id="tabletask">
+            <tr>
+                <th>Tâche</th>
+                <th>Supprimer</th>
+            </tr>
+        </table>
+    </div>
+
+    </body>
+    <script>
+        const btn = `<button class="deletebutton"> X </button>`;
+        function createRow(task, button = btn) {
+            return `<tr><td>${task}</td><td>${button}</td></tr>`;
+        }
+
+        $(document).ready(function(){
+            $("#addtask").click(function(){
+                $("#tabletask").append(createRow($("#inputtask").val()));
+            });
+
+            // $(".deletebutton").click(function () {
+            //     console.log("a");
+            // });
+            $(document).on("click",".deletebutton",function() {
+                $(this).parent().parent().empty();
+            });
+        });
+
+    </script>
+</html>

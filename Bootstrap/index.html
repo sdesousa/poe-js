@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Titre de la page web</h1>
+            <p>
+                Ciliciam vero, quae Cydno amni exultat, Tarsus nobilitat, urbs perspicabilis hanc condidisse Perseus memora
+                tur, Iovis filius et Danaes, vel certe ex Aethiopia profectus Sandan quidam nomine vir opulentus et nobilis
+                et Anazarbus auctoris vocabulum referens, et Mopsuestia vatis illius
+            </p>
+
+            <div class="row" >
+                <div class="col-sm-2" style="background-color:lightgreen;">.col-sm-2</div>
+                <div class="col-sm-8" style="background-color:lavenderblush;">.col-sm-8</div>
+                <div class="col-sm-2" style="background-color:lightgreen;">.col-sm-2</div>
+            </div>
+
+            <p class="text-muted">Exemple texte</p>
+            <p class="text-primary">Exemple texte</p>
+            <p class="text-success">Exemple texte</p>
+            <p class="text-info">Exemple texte</p>
+            <p class="text-warning">Exemple texte</p>
+            <p class="text-danger">Exemple texte</p>
+            <p class="text-secondary">Exemple texte</p>
+            <p class="text-dark">Exemple texte</p>
+            <p class="text-body">Exemple texte</p>
+            <p class="text-light">Exemple texte</p>
+            <p class="text-white">Exemple texte</p>
+
+            <table class="table table-dark table-hover">
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Age</th>
+                </tr>
+                <tr>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>34</td>
+                </tr>
+                <tr>
+                    <td>Mary</td>
+                    <td>Moe</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td>July</td>
+                    <td>Dooley</td>
+                    <td>3</td>
+                </tr>
+            </table>
+
+            <img src="identicon.png" class="rounded" alt="">
+            <img src="identicon.png" class="rounded-circle" alt="">
+            <img src="identicon.png" class="img-thumbnail" alt="">
+
+            <form>
+                <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" placeholder="Enter password">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+            <button class="btn">Basic</button>
+            <button class="btn btn-primary">Primary</button>
+            <button class="btn btn-secondary">Secondary</button>
+            <button class="btn btn-success">Success</button>
+            <button class="btn btn-info">Info</button>
+            <button class="btn btn-warning">Warning</button>
+            <button class="btn btn-danger">Danger</button>
+            <button class="btn btn-dark">Dark</button>
+            <button class="btn btn-light">Light</button>
+            <button class="btn btn-link">Link</button>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary">Oui</button>
+                <button type="button" class="btn btn-primary">Je ne sais pas</button>
+                <button type="button" class="btn btn-primary">Non</button>
+            </div>
+
+            <div class="btn-group-vertical">
+                <button type="button" class="btn btn-primary">Apple</button>
+                <button type="button" class="btn btn-primary">Samsung</button>
+                <button type="button" class="btn btn-primary">Sony</button>
+            </div>
+
+            <ul class="list-group">
+                <li class="list-group-item">Element 1</li>
+                <li class="list-group-item active">Element 2</li>
+                <li class="list-group-item">Element 3</li>
+            </ul>
+
+            <div class="card">
+                <div class="card-header">Header</div>
+                <div class="card-body">Content</div>
+                <div class="card-footer">Footer</div>
+            </div>
+
+            <div class="card" style="width:280px">
+                <img class="card-img-top" src="identicon.png" style="width:100%" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">Firstname Lastname</h4>
+                    <p class="card-text">Some words about your self</p>
+                    <a href="#" class="btn btn-primary">More</a>
+                </div>
+            </div>
+
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
+
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
+
+            <ul class="nav nav-pills" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="pill" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#menu1">Menu 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#menu2">Menu 2</a>
+                </li>
+            </ul>
+
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                <a class="navbar-brand" href="#">Logo</a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link 3</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">@</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Username">
+            </div>
+
+            <ul class="pagination">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </div>
+    </body>
+</html>

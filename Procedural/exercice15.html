@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercice 15</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h3>Exercice 15</h3>
+        <div id="square"></div>
+        <div class="formSquare">
+            <input type="button" class="red" onclick="getColor('red')" value="Rouge">
+            <input type="button" class="blue" onclick="getColor('blue')" value="Bleu">
+            <input type="button" class="green" onclick="getColor('green')" value="Vert">
+        </div>
+
+        <h3>Exercice 16</h3>
+        <div id="flagImg"></div>
+        <div class="formSquare">
+            <input type="button" onclick="getFlagImg('algerie')" value="Algérie">
+            <input type="button" onclick="getFlagImg('france')" value="France">
+            <input type="button" onclick="getFlagImg('italie')" value="Italie">
+        </div>
+
+
+        <script>
+            function getColor(colorSelected) {
+                document.getElementById("square").style.backgroundColor = colorSelected;
+            }
+
+            function getFlagImg(countrySelected) {
+                // switch (countrySelected) {
+                //     case "algerie":
+                //         document.getElementById("flagImg").style.backgroundImage = "url('algerie.png')";
+                //         break;
+                //     case "france":
+                //         document.getElementById("flagImg").style.backgroundImage = "url('france.png')";
+                //         break;
+                //     case "italie":
+                //         document.getElementById("flagImg").style.backgroundImage = "url('italie.png')";
+                //         break;
+                // }
+                document.getElementById("flagImg").style.backgroundImage = `url('${countrySelected}.png')`;
+            }
+
+        </script>
+    </body>
+</html>

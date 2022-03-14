@@ -1,0 +1,26 @@
+{
+  "messages": [
+    {
+      "objet": "Message 1",
+      "destinataire": "John Smith",
+      "expediteur": "Anna Jones",
+      "date": "2012-04-23T18:25:43.511Z",
+      "contenu": {
+        "priorite" : "important",
+        "description": "Programmer une reunion"
+      },
+      "categories" : ["Professionnel", "Planning"]
+    },
+    {
+      "objet": "Message 2",
+      "destinataire": "Anna Jones",
+      "expediteur": "John Smith",
+      "date": "2017-01-01T18:25:43.511Z",
+      "contenu": {
+        "priorite" : "normal",
+        "description": "Bonne Année"
+      },
+      "categories" : ["Personnel"]
+    }
+  ]
+}

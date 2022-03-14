@@ -1,0 +1,41 @@
+body {
+    font-family: Lato, sans-serif;
+}
+
+h1, h3, h5 {
+    font-family: Roboto, serif;
+}
+
+.primary-color {
+    color: #6d1c49;
+}
+
+.secondary-color {
+    color: #1abc9c;
+}
+
+.darker-color {
+    color: #0a2342;
+}
+
+.lighter-color {
+    color: #f1f1f1;
+}
+
+.bg-darker-color {
+    background-color: #0a2342;
+}
+
+.bg-lighter-color {
+    background-color: #e1e1e1;
+}
+
+.border-darker-color {
+    border: 1px solid #0a2342;
+    box-shadow: 0 0 4px 2px #0a2342;
+}
+
+.navbar {
+    width: 100%;
+    height: 40px;
+}

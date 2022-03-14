@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Alert</title>
+    </head>
+
+    <body onload="sayHello()">
+        <button onclick="sayHello()">Click ici !</button>
+        <p id="p1" class="myClass">Paragraphe 1</p>
+        <p id="p2" class="myClass">Paragraphe 2</p>
+
+        <script>
+            function sayHello() {
+                alert("Bonjour tout le monde");
+            }
+            let parId = document.getElementById("p1");
+            console.log(parId);
+            console.log(parId.innerHTML);
+            let parName = document.getElementsByTagName("p")[1].innerHTML;
+            console.log(parName);
+            let parClass = document.getElementsByClassName("myClass")[1].innerHTML;
+            console.log(parClass);
+            let parQuery = document.querySelectorAll("p.myClass")[0].innerHTML;
+            console.log(parQuery);
+        </script>
+    </body>
+
+</html>

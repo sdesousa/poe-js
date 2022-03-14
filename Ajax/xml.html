@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <meta charset="utf-8"/>
+    <body>
+    <span id="demoXml"></span>
+    <span id="demoTxt"></span>
+    <script>
+        console.log("D1 " + document.readyState);
+        let xmlhttp = new XMLHttpRequest();
+        console.log("X1 " + xmlhttp.readyState);
+        xmlhttp.onload = function() {
+            console.log("X2 " + this.readyState);
+            let data = this.responseXML;
+            let demo = data.getElementsByTagName("firstname")[0].innerHTML;
+            document.getElementById("demoXml").innerHTML = demo;
+            console.log("X3 " + this.readyState);
+        }
+        console.log("X4 " + xmlhttp.readyState);
+        // Async true by default
+        xmlhttp.open("GET", "http://127.0.0.1:63342/Javascript/Ajax/person.xml");
+        xmlhttp.send();
+        console.log("X5 " + xmlhttp.readyState);
+
+        const xhttp = new XMLHttpRequest();
+        console.log("T1 " + xhttp.readyState);
+        xhttp.onreadystatechange = function () {
+            console.log("T2 " + this.readyState);
+            if (this.readyState === 4 && this.status === 200) {
+                console.log(this.responseText);
+            }
+            console.log("T3 " + this.readyState);
+        }
+        console.log("T4 " + xhttp.readyState);
+        // Async true by default
+        xhttp.open("GET", "http://127.0.0.1:63342/Javascript/Ajax/file.txt", true);
+        xhttp.send();
+        console.log("T5 " + xhttp.readyState);
+        console.log("D2 " + document.readyState);
+
+    </script>
+    </body>
+</html>

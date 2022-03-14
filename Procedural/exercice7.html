@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercice 7</title>
+    </head>
+    <body>
+    <script>
+
+        let nbToFind = 3;
+        let nbRand = -1;
+        let nbTry = 0;
+        while (nbRand !== nbToFind) {
+            nbRand = Math.floor(Math.random()*11);
+            console.log(nbRand)
+            nbTry++;
+        }
+        document.write(`Nombre recherché: ${nbToFind} <br />`);
+        document.write(`Nombre d'essais: ${nbTry} <br />`);
+
+    </script>
+    </body>
+</html>
